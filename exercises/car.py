@@ -21,4 +21,4 @@ class Subaru(Car):
         Car.__init__(self, body_type, engine_type)
         
     def describe(self):
-        return f"{self.year} {self.model} {self.trim} {self.describe_car()}"
+        return f"{self.year} {self.model} {self.trim} ({self.describe_car()})"
