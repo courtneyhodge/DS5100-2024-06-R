@@ -7,6 +7,13 @@ class BookLoverTestSuite(unittest.TestCase):
         # add a book and test if it is in `book_list`.
         reader1 = BookLover('Sarah', 'Sarah_Reads@gmail.com', 'horror')
         reader1.add_book('Lord of the Rings', 4)
+        
+        #error message in case test fails
+        message = "Book is already in list"
+        
+        #assertTrue(test_value, message)
+        self.assertTrue('Lord of the Rings' in reader1.book_list['book_name'].values, message)
+        
         print(reader1.book_list)
 
     def test_2_add_book(self):
@@ -14,6 +21,17 @@ class BookLoverTestSuite(unittest.TestCase):
         reader1 = BookLover('Sarah', 'Sarah_Reads@gmail.com', 'horror')
         reader1.add_book('Lord of the Rings', 4)
         reader1.add_book('Lord of the Rings', 4)
+        
+        expected = 1
+        
+        #error message in case test fails
+        message = "Book is already in list"
+        
+        #assertEqual(first_val, second_val, message)
+        self.assertEqual(len(reader1.book_list[reader1.book_list['book_name'] == 'Lord of the Rings']), expected, message)
+        
+        
+        
         print(reader1.book_list)
 
     def test_3_has_read(self): 
