@@ -1,0 +1,108 @@
+---
+title: "M10_Exercises"
+output: html_notebook
+author: Courtney Hodge
+---
+
+## Exercise 10.1
+
+```{r}
+#write an R script (not a function) to get the first 20 fibonacci numbers
+fibonacci <- numeric(10) #created a numeric vector
+fibonacci[1] <- fibonacci[2] <- 1
+for (i in 3:10){
+  fibonacci <- fibonacci[i-2] + fibonacci[i-1]
+  
+}
+
+print(fibonacci)
+```
+
+## Exercise 10.2
+
+```{r}
+get_fibonacci <- function(n = 10){
+  fibonacci <- numeric(n)
+  fibonnaci[1] <- fibonacci[2] <- 1
+  for (i in 3:n){
+    fibonacci[i] <-fibonacci[i-2] + fibonacci[i-1]
+  }
+  return(fibonacci)
+}
+
+fib20 <- get_fibonacci(10)
+
+print(fib20)
+```
+
+## Exercise 10.3
+```{r}
+#write a function that takes a numeric x and returns 1 if 0 <= x <= 1
+#else returns 0
+
+my_function <- function(x){
+  if(x >=0 & x <= 1){
+    return(1)
+  }
+  else{
+    return(0)
+  }
+}
+
+
+test <- my_function(10)
+print(test)
+```
+
+## Exercise 10.4 
+```{r}
+#apply the function to five values
+for(i in 1:5){
+  print(my_function(i))
+}
+```
+
+
+## Exercise 10.5
+```{r}
+letters
+
+print(letters[1:10])
+print(LETTERS[-1:-10])
+print(LETTERS[22:24])
+```
+
+
+## Exercise 10.6
+```{r}
+print(1:100)
+
+for(i in 1:100){
+  if(i %% 3 == 0 & i%%5 != 0){
+    print(paste(i, "Fizz"))
+  }
+  else if (i %% 3 != 0 & i%%5 == 0){
+    print(paste(i,"Buzz"))
+  }
+  else if (i %% 3 == 0 & i%%5 == 0){
+    print(paste(i,"FizzBuzz"))
+    
+  }
+  else{
+    print(i)
+  }
+}
+```
+
+
+## Exercise 10.7
+```{r}
+my_str <- "I love apples and cherries"
+string <- unlist(strsplit(tolower(my_str), ' '))
+print(string)
+print(unique(string))
+A <- c(1, 2,3,4,5,5,5,6,7,7,8,8,9)
+unique(A)
+unique(my_str)
+```
+
